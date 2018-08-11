@@ -11,18 +11,18 @@
   crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
 
- <title>Weather app by Borki</title>
+ <title>Időjárás by Borki</title>
 </head>
 
 <body>
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-3">
  <div class="container">
-  <div class="navbar-brand">Weather app</div>
+  <div class="navbar-brand">Milyen idő van?</div>
   
   <ul class="navbar-nav">
 
     <li class="nav-item dropdown">
-      <a href="#" class="navlink dropdown-toggler text-white" data-toggle="dropdown">Your favorites
+      <a href="#" class="navlink dropdown-toggler text-white" data-toggle="dropdown">A te lokációid
       </a>
       <div class="dropdown-menu" id="favoritesDropdown">
         
@@ -42,14 +42,14 @@
  <div class="container">
   <div class="row">
    <div class="col">
-    <h1 class="display-4 m-2">The weather app</h1>
-    <p class="lead">Fetched from Wunderground.com</p>
+    <h1 class="display-4 m-2">Időjárás fetcher</h1>
+    <p class="lead">Wunderground.com API alapján</p>
     <div class="card">
      <div class="card-head">
-      <h2 class="p-2">Select a city</h2>
+      <h2 class="p-2">Adj meg egy települést</h2>
       <div class="card-body">
-       <input type="text" class="form-control" placeholder="Enter a city from Hungary, please!" id="cityInput">
-       <div class="mt-3 btn-block btn btn-outline-success" id="searchBtn">Search</div>
+       <input type="text" class="form-control" placeholder="Kérlek, adj meg egy magyarországi települést!" id="cityInput">
+       <div class="mt-3 btn-block btn btn-outline-success" id="searchBtn">Keresés</div>
       </div>
 
      </div>

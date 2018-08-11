@@ -37,6 +37,8 @@ class UI{
 
  // Displaying the weather
  displayWeather(data){
+  //  console.log(data.response.error.type);
+   console.log(data);
   document.getElementById('loaderSection').style.display = 'block';
 
   setTimeout(()=>{
@@ -46,40 +48,46 @@ class UI{
 
   setTimeout(()=>{
 
-   this.results.innerHTML= 
-    `
-    <div class="container">
-   <div class="row ">
-    <div class="col-md-8 m-auto">
-     
-     <div class="card">
-      <div class="card-body">
-       <h3 class="text-center display-4">${data.current_observation.display_location.city}</h3>
-        <div class="text-center pb-2">
-         <img src="${data.current_observation.icon_url}" class="m-auto" alt="">
-         <p class="lead">${data.current_observation.icon}</p>
+  if (data.current_observation != undefined) {
+
+    this.results.innerHTML= 
+      `
+      <div class="container">
+    <div class="row ">
+      <div class="col-md-8 m-auto">
+      
+      <div class="card">
+        <div class="card-body">
+        <h3 class="text-center display-4">${data.current_observation.display_location.city}</h3>
+          <div class="text-center pb-2">
+          <img src="${data.current_observation.icon_url}" class="m-auto" alt="">
+          <p class="lead">${data.current_observation.icon}</p>
+          </div>
+        <ul class="list-group">
+          <li class="list-group-item">Aktuális Hőmérséklet: ${data.current_observation.temp_c} </li>
+          <li class="list-group-item">Legalacsonyabb hőmérséklet: ${data.current_observation.dewpoint_c} </li>
+          <li class="list-group-item">Valós érzet: ${data.current_observation.feelslike_c} </li>
+          <li class="list-group-item">Páratartalom: ${data.current_observation.relative_humidity} </li>
+        </ul>
+        <!-- Add to favorits -->
+        <div class="text-right mt-3">
+          <button id="addToFavBtn" class="btn btn-outline-info">Hozzáadás a kedvencekhez
+          </button>
+          <div id="storageMessage"></div>
         </div>
-       <ul class="list-group">
-        <li class="list-group-item">Aktuális Hőmérséklet: ${data.current_observation.temp_c} </li>
-        <li class="list-group-item">Legalacsonyabb hőmérséklet: ${data.current_observation.dewpoint_c} </li>
-        <li class="list-group-item">Valós érzet: ${data.current_observation.feelslike_c} </li>
-        <li class="list-group-item">Páratartalom: ${data.current_observation.relative_humidity} </li>
-       </ul>
-       <!-- Add to favorits -->
-       <div class="text-right mt-3">
-        <button id="addToFavBtn" class="btn btn-outline-info">Hozzáadás a kedvencekhez
-        </button>
-        <div id="storageMessage"></div>
-       </div>
+        </div>
       </div>
-     </div>
+      </div>
     </div>
-   </div>
-  </div>
- 
-    `;
+    </div>
+    `;}
+    else {
+      this.displayMessage('A megadott település nem található az adatbázisban', 'alert alert-danger');
+    }
   },2000);
+
  }
+
 
  displayFavorites(favorites){
 let favoritesDropdown= document.querySelector('#favoritesDropdown');
