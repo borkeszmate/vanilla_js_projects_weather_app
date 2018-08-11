@@ -23,7 +23,7 @@ let cityInput= document.getElementById('cityInput');
   // Do the fetch
 
    wunderground.getWeather(cityInput.value.toLowerCase().replace(/[őóö]/ig, 'o')
-     .replace(/[úűü]/ig, 'o')
+     .replace(/[úűü]/ig, 'u')
      .replace(/á/ig, 'a') 
      .replace(/é/ig, 'e')
      .replace(/í/ig, 'i'))
