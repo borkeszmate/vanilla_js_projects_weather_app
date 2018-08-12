@@ -64,10 +64,10 @@ class UI{
           <p class="lead">${data.current_observation.icon}</p>
           </div>
         <ul class="list-group">
-          <li class="list-group-item">Aktuális Hőmérséklet: ${data.current_observation.temp_c} </li>
-          <li class="list-group-item">Legalacsonyabb hőmérséklet: ${data.current_observation.dewpoint_c} </li>
-          <li class="list-group-item">Valós érzet: ${data.current_observation.feelslike_c} </li>
-          <li class="list-group-item">Páratartalom: ${data.current_observation.relative_humidity} </li>
+          <li class="list-group-item">Aktuális Hőmérséklet: ${data.current_observation.temp_c} &deg;C</li>
+          <li class="list-group-item">Legalacsonyabb hőmérséklet: ${data.current_observation.dewpoint_c} &deg;C</li>
+          <li class="list-group-item">Valós érzet: ${data.current_observation.feelslike_c} &deg;C </li>
+          <li class="list-group-item">Páratartalom: ${data.current_observation.relative_humidity} &deg;C</li>
         </ul>
         <!-- Add to favorits -->
         <div class="text-right mt-3">

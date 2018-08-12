@@ -62,18 +62,17 @@ let dropdownMenuItems = document.querySelector('#favoritesDropdown');
 
 
 // Getting the data attribute from the element clicked
-// dropdownMenuItems.addEventListener('click', (e)=>{
-
-//   wunderground.getWeather(e.target.getAttribute('data-city').toLowerCase().replace(/[őóö]/ig, 'o')
-//     .replace(/[úűü]/ig, 'o')
-//     .replace(/á/ig, 'a')
-//     .replace(/é/ig, 'e')
-//     .replace(/í/ig, 'i'))
-//     .then(data => {
-//       ui.displayWeather(data);
-//     })
-//     .catch(err => console.log(err));
-// })
+dropdownMenuItems.addEventListener('click', (e)=>{
+  wunderground.getWeather(e.target.getAttribute('data-city').toLowerCase().replace(/[őóö]/ig, 'o')
+    .replace(/[úűü]/ig, 'o')
+    .replace(/á/ig, 'a')
+    .replace(/é/ig, 'e')
+    .replace(/í/ig, 'i'))
+    .then(data => {
+      ui.displayWeather(data);
+    })
+    .catch(err => console.log(err));
+})
 
 // Deleting from favorites
 dropdownMenuItems.addEventListener('click', (e)=>{

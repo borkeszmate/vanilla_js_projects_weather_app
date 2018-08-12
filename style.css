@@ -6,4 +6,20 @@
 .navlink{
  text-decoration: none;
  font-size: 20px;
+ 
+}
+
+.dropdown-item{
+ cursor: pointer;
+ transition: all 0.4s;
+}
+
+.delete-item{
+ 
+ transition: all 0.4s;
+}
+
+.delete-item:hover{
+ font-size: 1.5rem;
+ transition: all 0.4s;
 }
